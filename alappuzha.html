@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alappuzha Tourism | Venice of the East</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0d5c63;
+            --secondary: #44a1a0;
+            --accent: #ff9a3d;
+            --dark: #072c30;
+            --light: #f8f9fa;
+            --text: #333;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            --transition: all 0.4s ease;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f7f6;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(68, 161, 160, 0.1) 0%, rgba(245, 247, 246, 0) 70%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: inline-block;
+            position: relative;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title h2::after {
+            content: "";
+            position: absolute;
+            width: 70%;
+            height: 4px;
+            background: var(--accent);
+            bottom: -10px;
+            left: 15%;
+            border-radius: 2px;
+            box-shadow: var(--shadow);
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(13, 92, 99, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(13, 92, 99, 0.4);
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover::after {
+            left: 100%;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(7, 44, 48, 0.95);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+            transition: var(--transition);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        header.scrolled {
+            padding: 10px 0;
+            background-color: rgba(7, 44, 48, 0.98);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://www.dtpcalappuzha.com/uploads/picture_gallery/gallery_images/alappuzha-backwaters-20230523131043979933.webp') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            animation: fadeInDown 1s ease;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.6rem;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+            animation: fadeInUp 1s ease;
+            font-weight: 300;
+        }
+
+        .hero .btn {
+            animation: fadeIn 1.5s ease;
+            font-size: 1.1rem;
+            padding: 15px 40px;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 2.5rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+
+        /* About Section */
+        .about {
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: -150px;
+            right: -150px;
+            width: 400px;
+            height: 400px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%230d5c63" fill-opacity="0.05" d="M20,20 Q40,5 50,30 T90,20"/></svg>') no-repeat;
+            background-size: contain;
+            z-index: 0;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .about-text h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transform: rotate(2deg);
+            transition: var(--transition);
+        }
+
+        .about-image:hover {
+            transform: rotate(0) scale(1.02);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Destinations Section */
+        .destinations {
+            background: linear-gradient(to bottom, #f5f7f6, #e1f0f0);
+            position: relative;
+        }
+
+        .destinations::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            left: -150px;
+            width: 400px;
+            height: 400px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%230d5c63" fill-opacity="0.05" d="M20,20 Q40,5 50,30 T90,20"/></svg>') no-repeat;
+            background-size: contain;
+            z-index: 0;
+            transform: rotate(180deg);
+        }
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            background: white;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 35px;
+        }
+
+        .destination-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .destination-card:hover .card-image img {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-content h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .card-content p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+
+        .map-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: var(--transition);
+        }
+
+        .map-link:hover {
+            color: var(--secondary);
+            gap: 12px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: white;
+            position: relative;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            height: 280px;
+            position: relative;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            padding: 20px 15px 15px;
+            transform: translateY(100%);
+            transition: var(--transition);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .gallery-item:hover .caption {
+            transform: translateY(0);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(to bottom, #e1f0f0, #d1e6e6);
+            position: relative;
+        }
+
+        .testimonial-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-slide {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: none;
+        }
+
+        .testimonial-slide.active {
+            display: block;
+            animation: fadeIn 0.8s ease;
+        }
+
+        .testimonial-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            color: #555;
+            line-height: 1.8;
+            position: relative;
+        }
+
+        .testimonial-text::before,
+        .testimonial-text::after {
+            content: '"';
+            font-size: 4rem;
+            color: var(--secondary);
+            opacity: 0.2;
+            position: absolute;
+            font-family: serif;
+        }
+
+        .testimonial-text::before {
+            top: -30px;
+            left: -20px;
+        }
+
+        .testimonial-text::after {
+            bottom: -60px;
+            right: -20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .author-image {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--secondary);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            color: var(--primary);
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+        }
+
+        .author-info p {
+            color: #777;
+            font-size: 1rem;
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            gap: 15px;
+        }
+
+        .testimonial-nav button {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: none;
+            background: #ccc;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .testimonial-nav button.active {
+            background: var(--primary);
+            transform: scale(1.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .footer-column p {
+            margin-bottom: 20px;
+            color: #ccc;
+            line-height: 1.7;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links a i {
+            color: var(--secondary);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+            color: var(--dark);
+        }
+
+        .helpline-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .helpline-section h4 {
+            color: var(--accent);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .helpline-section p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-25px) translateX(-50%); }
+            60% { transform: translateY(-15px) translateX(-50%); }
+        }
+
+        @keyframes modalOpen {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.4rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--dark);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 60px;
+                transition: var(--transition);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 20px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .destinations-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-slide {
+                padding: 25px;
+            }
+            
+            .testimonial-text {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>Alappuzha<span>Explorer</span></h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#destinations">Destinations</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Discover Alappuzha</h1>
+            <p>Venice of the East - Kerala's Backwater Paradise</p>
+            <a href="#destinations" class="btn">Explore Destinations</a>
+        </div>
+        <div class="scroll-down" onclick="document.querySelector('#about').scrollIntoView({ behavior: 'smooth' })">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Alappuzha</h2>
+                <p>Discover the Venice of the East - Kerala's backwater paradise</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>The Backwater Capital of India</h3>
+                    <p>Alappuzha, formerly known as Alleppey, is the administrative headquarters of Alappuzha district in Kerala. Famous for its backwaters, beaches, and lagoons, it's known as the "Venice of the East". The city's canals, backwaters, beaches, and lagoons have made it a top tourist destination.</p>
+                    <p>Alappuzha is a land of immense natural beauty. The district is flanked by the Arabian Sea on the west and has a vast network of lakes, lagoons and freshwater rivers crisscrossing it. The snake boat races held here during Onam are internationally famous.</p>
+                    <p>Houseboats (kettuvallams) are the most popular tourist attraction in Alappuzha. These floating accommodations offer a unique way to experience the tranquility of the backwaters while enjoying authentic Kerala cuisine. From bird watching to fishing, and from Ayurvedic treatments to village tours, Alappuzha offers unforgettable experiences.</p>
+                    <a href="#destinations" class="btn">Explore Destinations</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://media2.thrillophilia.com/images/photos/000/013/616/original/1463255770_kumbalangi_backwaters_kochi_1_378.jpg?w=753&h=450&dpr=1.5" alt="Alappuzha Backwaters">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section class="destinations" id="destinations">
+        <div class="container">
+            <div class="section-title">
+                <h2>Top Destinations</h2>
+                <p>Discover Alappuzha's most stunning attractions</p>
+            </div>
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="nature">Nature</button>
+                <button class="filter-btn" data-filter="backwater">Backwaters</button>
+                <button class="filter-btn" data-filter="cultural">Cultural</button>
+                <button class="filter-btn" data-filter="beach">Beaches</button>
+            </div>
+            <div class="destinations-grid" id="destinationsContainer">
+                <!-- Destination cards will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Gallery</h2>
+                <p>Capturing the essence of Alappuzha</p>
+            </div>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="https://keralahouseboat.com/wp-content/uploads/2024/03/Kerala-Houseboats-Fleet-e1710762575588.webp" alt="Houseboats in Backwaters">
+                    <div class="caption">Houseboats in Backwaters</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/20/c8/7a/20190317-150044-largejpg.jpg?w=900&h=-1&s=1" alt="Alappuzha Beach">
+                    <div class="caption">Alappuzha Beach</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.keralatourism.org/uploads/msimages/medium-desktop/nehru-trophy-20220831070836485280.jpg" alt="Nehru Trophy Snake Boat Race">
+                    <div class="caption">Nehru Trophy Snake Boat Race</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.tripsavvy.com/thmb/UoylMLyzOBPdDp34ForEiJd9m3s=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-522478216-5ab12c4e3de4230036949cee.jpg" alt="Backwater Canals">
+                    <div class="caption">Backwater Canals</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.shutterstock.com/image-photo/silhouette-scene-ferryboat-backwaters-kerala-600nw-102228670.jpg" alt="Sunset in Backwaters">
+                    <div class="caption">Sunset in Backwaters</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.indigocruise.com/images/tourist-place/18.jpg" alt="Vembanad Lake">
+                    <div class="caption">Vembanad Lake</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Traveler Experiences</h2>
+                <p>What visitors say about Alappuzha</p>
+            </div>
+            <div class="testimonial-container">
+                <div class="testimonial-slide active">
+                    <p class="testimonial-text">Our houseboat experience in Alappuzha was magical! Gliding through serene backwaters, enjoying freshly cooked Kerala meals, and watching the sunset over the water created memories that will last forever. The hospitality was exceptional and the scenery breathtaking.</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Emily Johnson">
+                        </div>
+                        <div class="author-info">
+                            <h4>Emily Johnson</h4>
+                            <p>Travel Blogger, Canada</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">Attending the Nehru Trophy Snake Boat Race was a cultural experience like no other. The energy, the synchronized rowing, and the cheering crowds made it unforgettable. Alappuzha's backwaters are truly unique - a must-visit destination in India.</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Raj Patel">
+                        </div>
+                        <div class="author-info">
+                            <h4>Raj Patel</h4>
+                            <p>Cultural Explorer, USA</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">We spent our honeymoon on a houseboat in Alappuzha and it was perfect! The tranquility of the backwaters, the delicious Kerala cuisine, and the friendly crew made it a romantic and relaxing experience. Watching kingfishers dive for fish at sunrise was magical.</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sophie Martin">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sophie Martin</h4>
+                            <p>Honeymoon Traveler, France</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-nav">
+                    <button class="nav-dot active"></button>
+                    <button class="nav-dot"></button>
+                    <button class="nav-dot"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>AlappuzhaExplorer</h3>
+                    <p>Your ultimate guide to exploring the beautiful backwaters and beaches of Alappuzha. Discover serene landscapes, unique experiences, and unforgettable memories.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                    
+                    <div class="helpline-section">
+                        <h4><i class="fas fa-phone-volume"></i> Tourism Helpline</h4>
+                        <p><i class="fas fa-phone"></i> +91 477 225 3308</p>
+                        <p><i class="fas fa-mobile-alt"></i> +91 949 666 8888</p>
+                        <p><i class="fas fa-envelope"></i> help@keralatourism.org</p>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Alappuzha</a></li>
+                        <li><a href="#destinations"><i class="fas fa-chevron-right"></i> Destinations</a></li>
+                        <li><a href="#gallery"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="#testimonials"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Popular Destinations</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="destination-link" data-id="0"><i class="fas fa-map-marker-alt"></i> Houseboat Cruise</a></li>
+                        <li><a href="#" class="destination-link" data-id="1"><i class="fas fa-map-marker-alt"></i> Alappuzha Beach</a></li>
+                        <li><a href="#" class="destination-link" data-id="2"><i class="fas fa-map-marker-alt"></i> Kumarakom Bird Sanctuary</a></li>
+                        <li><a href="#" class="destination-link" data-id="3"><i class="fas fa-map-marker-alt"></i> Pathiramanal Island</a></li>
+                        <li><a href="#" class="destination-link" data-id="4"><i class="fas fa-map-marker-alt"></i> Nehru Trophy Snake Boat Race</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> District Tourism Promotion Council, Alappuzha, Kerala 688001</p>
+                    <p><i class="fas fa-phone"></i> +91 477 225 3308</p>
+                    <p><i class="fas fa-envelope"></i> info@alappuzhaexplorer.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</p>
+                    <a href="#" class="btn" style="margin-top: 15px;">Get Travel Guide</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 AlappuzhaExplorer. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> for Kerala Tourism</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Destination Data with Google Maps links, restaurants and stays
+        const destinations = [
+            {
+                id: 0,
+                name: "Houseboat Cruise",
+                image: "https://www.shutterstock.com/image-photo/houseboat-sailing-alappuzha-backwaters-kerala-600nw-2488720051.jpg",
+                shortDesc: "Experience the unique backwaters on a traditional houseboat.",
+                longDesc: "The houseboat cruise through the backwaters of Alappuzha is an unforgettable experience. These traditional Kettuvallams (rice barges) have been converted into floating accommodations with all modern comforts. As you glide through the serene waterways, you'll witness daily life along the banks - villagers fishing, farmers tending to paddy fields, and children playing. The cruise includes freshly prepared Kerala meals and the opportunity to spot diverse birdlife. Overnight stays on the houseboat offer a magical experience under the stars.",
+                category: "backwater",
+                altitude: "Sea level",
+                climate: "Tropical",
+                activities: "Cruising, Bird watching, Fishing, Relaxation",
+                bestTime: "September to March",
+                mapLink: "https://www.google.com/maps?q=Alappuzha+Houseboats",
+                restaurants: [
+                    { name: "Backwater Delight", cuisine: "Kerala Cuisine" },
+                    { name: "Houseboat Kitchen", cuisine: "Seafood Specialties" }
+                ],
+                stays: [
+                    { name: "Premium Houseboat", type: "Luxury Houseboat" },
+                    { name: "Traditional Kettuvallam", type: "Budget Houseboat" }
+                ]
+            },
+            {
+                id: 1,
+                name: "Alappuzha Beach",
+                image: "https://media1.thrillophilia.com/filestore/7yy1pd30junw4n15h89khh8oviza_steptodown.com137883%20(1).jpg",
+                shortDesc: "Beautiful beach with a historic pier and lighthouse.",
+                longDesc: "Alappuzha Beach is a popular beach with a historic pier extending into the sea. Built in 1862, the pier is now a heritage site. The beach offers stunning views of the Arabian Sea and is famous for its picturesque sunsets. The Vijaya Beach Park nearby is perfect for children with its play area. The old lighthouse offers panoramic views of the coastline. The beach is also known for hosting the annual Sand Art Festival which attracts artists from around the world.",
+                category: "beach",
+                altitude: "Sea level",
+                climate: "Tropical coastal",
+                activities: "Sunset viewing, Swimming, Lighthouse visit",
+                bestTime: "October to March",
+                mapLink: "https://www.google.com/maps?q=Alappuzha+Beach",
+                restaurants: [
+                    { name: "Seashell Restaurant", cuisine: "Seafood" },
+                    { name: "Beach View Cafe", cuisine: "Multi-cuisine" }
+                ],
+                stays: [
+                    { name: "Beach Heritage Hotel", type: "4-Star Hotel" },
+                    { name: "Sea Breeze Resort", type: "Beach Resort" }
+                ]
+            },
+            {
+                id: 2,
+                name: "Kumarakom Bird Sanctuary",
+                image: "https://i.pinimg.com/736x/62/b2/5c/62b25c7c52e108cf6f3b92ae5bb83a97.jpg",
+                shortDesc: "Ornithologist's paradise on the banks of Vembanad Lake.",
+                longDesc: "The Kumarakom Bird Sanctuary is spread across 14 acres on the banks of Vembanad Lake. This important bird sanctuary is home to a wide variety of resident and migratory birds including waterfowl, cuckoos, owls, egrets, herons, and the Siberian crane. The best time to visit is early morning or late afternoon. The sanctuary offers guided tours and boat rides through the mangrove forests. The migratory season (November to February) is particularly spectacular when thousands of birds arrive from Siberia and the Himalayas.",
+                category: "nature",
+                altitude: "Sea level",
+                climate: "Tropical",
+                activities: "Bird watching, Boat safari, Photography",
+                bestTime: "June to August & November to February",
+                mapLink: "https://www.google.com/maps?q=Kumarakom+Bird+Sanctuary",
+                restaurants: [
+                    { name: "Birdwatcher's Cafe", cuisine: "Light meals & beverages" }
+                ],
+                stays: [
+                    { name: "Backwater Ripples", type: "Lakeside Resort" },
+                    { name: "Feathers Lodge", type: "Eco Resort" }
+                ]
+            },
+            {
+                id: 3,
+                name: "Pathiramanal Island",
+                image: "https://i.pinimg.com/1200x/9c/e5/66/9ce56652f574e44260bcbfc99b6adad0.jpg",
+                shortDesc: "Serene island in Vembanad Lake known as 'Sands of Night'.",
+                longDesc: "Pathiramanal Island, meaning 'Sands of Night', is a small island in Vembanad Lake accessible only by boat. This tranquil island is a birdwatcher's paradise with over 90 species of birds including pintail ducks, common teal, and various migratory birds. The island is covered with thick vegetation and offers beautiful walking trails. Surrounded by the backwaters, it provides stunning views of the lake and is an ideal spot for photography enthusiasts. The island remains relatively undisturbed, offering a peaceful retreat from the mainland.",
+                category: "nature",
+                altitude: "Sea level",
+                climate: "Tropical",
+                activities: "Bird watching, Nature walks, Photography",
+                bestTime: "November to March",
+                mapLink: "https://www.google.com/maps?q=Pathiramanal+Island",
+                restaurants: [
+                    { name: "Island Cafe", cuisine: "Snacks & beverages" }
+                ],
+                stays: [
+                    { name: "Lake View Resort", type: "3-Star Resort" }
+                ]
+            },
+            {
+                id: 4,
+                name: "Nehru Trophy Snake Boat Race",
+                image: "https://redscarabtravelandmedia.wordpress.com/wp-content/uploads/2012/05/aranmula-snakeboatrace2.jpg",
+                shortDesc: "Iconic annual snake boat race held on Punnamada Lake.",
+                longDesc: "The Nehru Trophy Snake Boat Race is the most famous event in Alappuzha, held annually on the second Saturday of August. This spectacular event features long snake boats (Chundan Vallams) that can hold up to 100 rowers. The race takes place on Punnamada Lake with teams competing fiercely to win the trophy instituted by Jawaharlal Nehru. The event attracts thousands of spectators and is accompanied by water parades, elaborate opening ceremonies, and cultural performances. It's a vibrant celebration of Kerala's traditional boat culture.",
+                category: "cultural",
+                altitude: "Sea level",
+                climate: "Monsoon season",
+                activities: "Boat race viewing, Cultural events",
+                bestTime: "August (specific date varies)",
+                mapLink: "https://www.google.com/maps?q=Punnamada+Lake",
+                restaurants: [
+                    { name: "Race View Restaurant", cuisine: "Kerala Festival Food" },
+                    { name: "Lake Side Cafe", cuisine: "Snacks & beverages" }
+                ],
+                stays: [
+                    { name: "Punnamada Resort", type: "4-Star Resort" },
+                    { name: "Race View Homestay", type: "Homestay" }
+                ]
+            },
+            {
+                id: 5,
+                name: "Vembanad Lake",
+                image: "https://live.staticflickr.com/4051/4652502026_8947a35da0_h.jpg",
+                shortDesc: "India's longest lake and the largest in Kerala.",
+                longDesc: "Vembanad Lake is the longest lake in India and the largest in Kerala, spanning several districts. This expansive lake is the heart of Alappuzha's backwaters and is famous for its serene beauty and ecological significance. The lake hosts diverse marine life and attracts numerous migratory birds. It's the perfect place for boat cruises, kayaking, and canoeing. The annual Nehru Trophy Boat Race takes place on this lake. The Kumarakom Bird Sanctuary is located on its eastern banks.",
+                category: "backwater",
+                altitude: "Sea level",
+                climate: "Tropical",
+                activities: "Boating, Kayaking, Bird watching, Fishing",
+                bestTime: "September to March",
+                mapLink: "https://www.google.com/maps?q=Vembanad+Lake",
+                restaurants: [
+                    { name: "Lakeview Restaurant", cuisine: "Seafood Specialties" }
+                ],
+                stays: [
+                    { name: "Vembanad Lake Resort", type: "Luxury Resort" },
+                    { name: "Backwater Retreat", type: "Boutique Resort" }
+                ]
+            },
+            {
+                id: 6,
+                name: "Marari Beach",
+                image: "https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2023/12/14/394476c95b7c164540e8d3b9d153284c_1000x1000.jpg",
+                shortDesc: "Serene beach known for its fishing village charm.",
+                longDesc: "Marari Beach is a tranquil stretch of golden sand located about 11km from Alappuzha town. Unlike the main Alappuzha Beach, Marari offers a more peaceful atmosphere with coconut groves lining the shore. The beach is named after the fishing village of Mararikulam and provides an authentic glimpse into coastal village life. Visitors can watch fishermen bringing in their catch in the morning or relax in the many beach resorts that dot the coastline. The beach is ideal for swimming, sunbathing, and enjoying stunning sunrises.",
+                category: "beach",
+                altitude: "Sea level",
+                climate: "Tropical coastal",
+                activities: "Swimming, Sunbathing, Village walks",
+                bestTime: "October to March",
+                mapLink: "https://www.google.com/maps?q=Marari+Beach",
+                restaurants: [
+                    { name: "Fisherman's Wharf", cuisine: "Fresh seafood" },
+                    { name: "Coconut Grove Restaurant", cuisine: "Kerala Cuisine" }
+                ],
+                stays: [
+                    { name: "Marari Beach Resort", type: "5-Star Resort" },
+                    { name: "Sea Shell Homestay", type: "Beach Homestay" }
+                ]
+            },
+            {
+                id: 7,
+                name: "Ambalappuzha Sree Krishna Temple",
+                image: "https://www.explorebees.com/uploads/Sree%20Krishna%20Swamy%20Temple%20Ambalapuzha.jpg",
+                shortDesc: "Famous 17th-century temple known for its Palpayasam.",
+                longDesc: "The Ambalappuzha Sree Krishna Temple is one of Kerala's most famous temples, built in the 17th century. The temple is renowned for its traditional Kerala architecture and its connection to Lord Krishna. It's particularly famous for its delicious milk porridge offering called 'Palpayasam'. The temple hosts the annual Ambalappuzha Temple Festival which features colorful processions and traditional performances. The temple's mural paintings and architectural details are exceptional examples of Kerala's temple art.",
+                category: "cultural",
+                altitude: "Sea level",
+                climate: "Tropical",
+                activities: "Temple visit, Cultural experience",
+                bestTime: "March-April (festival time)",
+                mapLink: "https://www.google.com/maps?q=Ambalappuzha+Sree+Krishna+Temple",
+                restaurants: [
+                    { name: "Temple Cafe", cuisine: "Vegetarian Kerala" },
+                    { name: "Payasam Corner", cuisine: "Traditional sweets" }
+                ],
+                stays: [
+                    { name: "Temple View Homestay", type: "Homestay" },
+                    { name: "Heritage Resort", type: "3-Star Resort" }
+                ]
+            }
+        ];
+
+        // DOM Elements
+        const destinationsContainer = document.getElementById('destinationsContainer');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const header = document.getElementById('header');
+        const destinationLinks = document.querySelectorAll('.destination-link');
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Generate destination cards
+            generateDestinationCards(destinations);
+            
+            // Add event listeners
+            addEventListeners();
+            
+            // Initialize testimonial slider
+            initTestimonialSlider();
+        });
+
+        // Generate destination cards
+        function generateDestinationCards(destinationsArray) {
+            destinationsContainer.innerHTML = '';
+            
+            destinationsArray.forEach(destination => {
+                const card = document.createElement('div');
+                card.className = `destination-card ${destination.category}`;
+                card.innerHTML = `
+                    <div class="card-image">
+                        <img src="${destination.image}" alt="${destination.name}">
+                    </div>
+                    <div class="card-content">
+                        <h3>${destination.name}</h3>
+                        <p>${destination.shortDesc}</p>
+                        <a href="${destination.mapLink}" target="_blank" class="map-link">
+                            <i class="fas fa-map-marker-alt"></i> View on Map
+                        </a>
+                        <button class="btn view-details" data-id="${destination.id}">View Details</button>
+                    </div>
+                    <div class="card-badge">${destination.category.charAt(0).toUpperCase() + destination.category.slice(1)}</div>
+                `;
+                destinationsContainer.appendChild(card);
+            });
+            
+            // Add event listeners to detail buttons
+            document.querySelectorAll('.view-details').forEach(button => {
+                button.addEventListener('click', function() {
+                    const id = this.getAttribute('data-id');
+                    showDestinationDetails(id);
+                });
+            });
+        }
+
+        // Show destination details
+        function showDestinationDetails(id) {
+            const destination = destinations.find(dest => dest.id === parseInt(id));
+            
+            if (destination) {
+                // Create modal-like overlay
+                const overlay = document.createElement('div');
+                overlay.style.position = 'fixed';
+                overlay.style.top = '0';
+                overlay.style.left = '0';
+                overlay.style.width = '100%';
+                overlay.style.height = '100%';
+                overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+                overlay.style.zIndex = '2000';
+                overlay.style.display = 'flex';
+                overlay.style.justifyContent = 'center';
+                overlay.style.alignItems = 'center';
+                overlay.style.padding = '20px';
+                overlay.style.overflowY = 'auto';
+                
+                // Create modal content
+                const modalContent = document.createElement('div');
+                modalContent.style.background = 'white';
+                modalContent.style.maxWidth = '900px';
+                modalContent.style.width = '100%';
+                modalContent.style.borderRadius = '15px';
+                modalContent.style.overflow = 'hidden';
+                modalContent.style.position = 'relative';
+                modalContent.style.animation = 'modalOpen 0.5s ease';
+                modalContent.style.maxHeight = '90vh';
+                modalContent.style.overflowY = 'auto';
+                
+                // Generate restaurants HTML
+                let restaurantsHTML = '';
+                destination.restaurants.forEach(restaurant => {
+                    restaurantsHTML += `
+                        <div style="margin-bottom: 10px;">
+                            <div style="font-weight: 600;">${restaurant.name}</div>
+                            <div style="font-size: 0.9rem; color: #666;">${restaurant.cuisine}</div>
+                        </div>
+                    `;
+                });
+                
+                // Generate stays HTML
+                let staysHTML = '';
+                destination.stays.forEach(stay => {
+                    staysHTML += `
+                        <div style="margin-bottom: 10px;">
+                            <div style="font-weight: 600;">${stay.name}</div>
+                            <div style="font-size: 0.9rem; color: #666;">${stay.type}</div>
+                        </div>
+                    `;
+                });
+                
+                modalContent.innerHTML = `
+                    <div style="background: var(--primary); padding: 25px; color: white; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 10;">
+                        <h3 style="font-size: 1.8rem; font-family: 'Playfair Display', serif;">${destination.name}</h3>
+                        <button class="close-modal" style="background: none; border: none; color: white; font-size: 2rem; cursor: pointer; transition: all 0.3s ease;">&times;</button>
+                    </div>
+                    <div style="padding: 30px; display: flex; gap: 30px; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 300px; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
+                            <img src="${destination.image}" alt="${destination.name}" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div style="flex: 1; min-width: 300px;">
+                            <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8;">${destination.longDesc}</p>
+                            <div style="display: flex; gap: 15px; margin: 20px 0; flex-wrap: wrap;">
+                                <div style="background: var(--light); padding: 12px 15px; border-radius: 8px; display: flex; align-items: center; gap: 8px;">
+                                    <i class="fas fa-mountain" style="color: var(--primary);"></i>
+                                    <span>Altitude: ${destination.altitude}</span>
+                                </div>
+                                <div style="background: var(--light); padding: 12px 15px; border-radius: 8px; display: flex; align-items: center; gap: 8px;">
+                                    <i class="fas fa-sun" style="color: var(--primary);"></i>
+                                    <span>Climate: ${destination.climate}</span>
+                                </div>
+                                <div style="background: var(--light); padding: 12px 15px; border-radius: 8px; display: flex; align-items: center; gap: 8px;">
+                                    <i class="fas fa-hiking" style="color: var(--primary);"></i>
+                                    <span>Activities: ${destination.activities}</span>
+                                </div>
+                                <div style="background: var(--light); padding: 12px 15px; border-radius: 8px; display: flex; align-items: center; gap: 8px;">
+                                    <i class="fas fa-calendar-alt" style="color: var(--primary);"></i>
+                                    <span>Best Time: ${destination.bestTime}</span>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: 30px; display: flex; gap: 30px; flex-wrap: wrap;">
+                                <div style="flex: 1; min-width: 250px;">
+                                    <h4 style="color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                                        <i class="fas fa-utensils"></i> Nearby Restaurants
+                                    </h4>
+                                    ${restaurantsHTML}
+                                </div>
+                                <div style="flex: 1; min-width: 250px;">
+                                    <h4 style="color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                                        <i class="fas fa-hotel"></i> Stay Facilities
+                                    </h4>
+                                    ${staysHTML}
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: 20px; display: flex; gap: 15px;">
+                                <a href="${destination.mapLink}" target="_blank" class="btn" style="margin-top: 10px;">
+                                    <i class="fas fa-map-marker-alt"></i> Open in Google Maps
+                                </a>
+                                <a href="#contact" class="btn" style="margin-top: 10px; background: var(--secondary);">
+                                    <i class="fas fa-phone"></i> Contact for Booking
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                overlay.appendChild(modalContent);
+                document.body.appendChild(overlay);
+                
+                // Close modal
+                const closeBtn = modalContent.querySelector('.close-modal');
+                closeBtn.addEventListener('click', () => {
+                    document.body.removeChild(overlay);
+                });
+                
+                // Close when clicking outside
+                overlay.addEventListener('click', (e) => {
+                    if (e.target === overlay) {
+                        document.body.removeChild(overlay);
+                    }
+                });
+            }
+        }
+
+        // Add event listeners
+        function addEventListeners() {
+            // Filter buttons
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    if (filter === 'all') {
+                        generateDestinationCards(destinations);
+                    } else {
+                        const filtered = destinations.filter(dest => dest.category === filter);
+                        generateDestinationCards(filtered);
+                    }
+                });
+            });
+            
+            // Footer destination links
+            destinationLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const id = this.getAttribute('data-id');
+                    showDestinationDetails(id);
+                    
+                    // Scroll to top
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Menu toggle for mobile
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+            
+            // Header scroll effect
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        navLinks.classList.remove('active');
+                    }
+                });
+            });
+        }
+
+        // Initialize testimonial slider
+        function initTestimonialSlider() {
+            const slides = document.querySelectorAll('.testimonial-slide');
+            const dots = document.querySelectorAll('.nav-dot');
+            let currentSlide = 0;
+            
+            // Function to show a specific slide
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentSlide = index;
+            }
+            
+            // Add click events to dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showSlide(index);
+                });
+            });
+            
+            // Auto slide every 5 seconds
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
